@@ -1,0 +1,209 @@
+import { Question } from '../types';
+
+/**
+ * 50개 질문 뱅크
+ * 카테고리는 인지자극치료(CST)의 대표 영역을 참고해 구성:
+ * - reminiscence(회상): 오래된 자서전적 기억 인출 → 장기기억 자극
+ * - orientation(지남력): 오늘 날짜/계절/장소 인식 → 시간 감각 유지
+ * - calculation(계산): 간단한 암산 → 작업기억/집중력
+ * - language(언어유창성): 카테고리 안에서 단어 떠올리기 → 의미기억 인출 속도
+ * - family(가족/관계): 가까운 사람에 대한 기억 → 정서적 동기부여 + 최신 기억
+ * - daily(일상/감각): 오늘 있었던 일 → 단기기억 훈련(가장 중요)
+ * - problem(문제해결): 가상의 상황 판단 → 실행기능
+ * - general(상식/화제): 가벼운 화제 → 대화 유도, 부담 적음
+ */
+export const QUESTIONS: Question[] = [
+  // 회상 (reminiscence) - 8개
+  { id: '0001', category: 'reminiscence', text: '어릴 때 가장 좋아했던 음식은 무엇이었나요?' },
+  { id: '0002', category: 'reminiscence', text: '학교 다닐 때 가장 친했던 친구는 누구였나요?' },
+  { id: '0003', category: 'reminiscence', text: '젊은 시절 가장 기억에 남는 여행지는 어디인가요?' },
+  { id: '0004', category: 'reminiscence', text: '처음 일을 시작했을 때 어떤 일을 하셨나요?' },
+  { id: '0005', category: 'reminiscence', text: '결혼식 날 기억나는 일이 있으신가요?' },
+  { id: '0006', category: 'reminiscence', text: '어린 시절 살던 동네는 어떤 모습이었나요?' },
+  { id: '0007', category: 'reminiscence', text: '군대나 학창시절, 기억에 남는 에피소드가 있나요?' },
+  { id: '0008', category: 'reminiscence', text: '옛날에 즐겨 부르던 노래가 있다면 무엇인가요?' },
+
+  // 지남력 (orientation) - 6개
+  { id: '0009', category: 'orientation', text: '오늘은 무슨 요일인가요?' },
+  { id: '0010', category: 'orientation', text: '지금은 어느 계절인가요?' },
+  { id: '0011', category: 'orientation', text: '오늘 날짜(월, 일)를 말씀해 주시겠어요?' },
+  { id: '0012', category: 'orientation', text: '올해는 몇 년도인가요?' },
+  { id: '0013', category: 'orientation', text: '지금 계신 곳(집, 방)은 어디인가요?' },
+  { id: '0014', category: 'orientation', text: '오늘 날씨는 어떤가요?' },
+
+  // 계산/논리 (calculation) - 6개
+  { id: '0015', category: 'calculation', text: '100에서 7을 빼면 얼마인가요?' },
+  { id: '0016', category: 'calculation', text: '9 더하기 6은 얼마인가요?' },
+  { id: '0017', category: 'calculation', text: '올해에서 태어난 해를 빼면 나이가 몇 살인가요?' },
+  { id: '0018', category: 'calculation', text: '천 원짜리 세 장이면 얼마인가요?' },
+  { id: '0019', category: 'calculation', text: '지금 시각에서 두 시간 후는 몇 시인가요?' },
+  { id: '0020', category: 'calculation', text: '1부터 20까지 짝수만 몇 개인지 세어보시겠어요?' },
+
+  // 언어유창성 (language) - 6개
+  { id: '0021', category: 'language', text: "'ㄱ'으로 시작하는 과일 이름을 3개 말해보세요." },
+  { id: '0022', category: 'language', text: '동물 이름을 아는 대로 다섯 가지 말해보세요.' },
+  { id: '0023', category: 'language', text: '빨간색인 물건을 세 가지 말해보세요.' },
+  { id: '0024', category: 'language', text: "'ㅅ'으로 시작하는 채소 이름을 말해보세요." },
+  { id: '0025', category: 'language', text: '집에 있는 물건 이름을 아는 대로 말해보세요.' },
+  { id: '0026', category: 'language', text: '좋아하는 속담이나 자주 쓰는 말이 있으신가요?' },
+
+  // 가족/관계 (family) - 8개
+  { id: '0027', category: 'family', text: '손주(또는 자녀)들의 이름을 말씀해 주시겠어요?' },
+  { id: '0028', category: 'family', text: '요즘 가장 자주 연락하는 가족은 누구인가요?' },
+  { id: '0029', category: 'family', text: '가족 중 가장 요리를 잘하는 사람은 누구인가요?' },
+  { id: '0030', category: 'family', text: '오늘 누군가와 대화를 나누셨나요? 어떤 이야기였나요?' },
+  { id: '0031', category: 'family', text: '가장 최근에 만난 가족은 누구였나요?' },
+  { id: '0032', category: 'family', text: '자녀들이 어릴 때 어떤 아이였나요?' },
+  { id: '0033', category: 'family', text: '가족 중 생일이 다가오는 사람이 있나요?' },
+  { id: '0034', category: 'family', text: '오늘 가족에게 하고 싶은 말이 있다면 무엇인가요?' },
+
+  // 일상/감각 (daily) - 10개
+  { id: '0035', category: 'daily', text: '오늘 아침에 무엇을 드셨나요?' },
+  { id: '0036', category: 'daily', text: '오늘 점심(또는 어제 저녁)은 무엇을 드셨나요?' },
+  { id: '0037', category: 'daily', text: '오늘 밖에 나가 보셨나요? 어디를 다녀오셨나요?' },
+  { id: '0038', category: 'daily', text: '오늘 몇 시에 일어나셨나요?' },
+  { id: '0039', category: 'daily', text: '오늘 TV나 라디오에서 본 것 중 기억나는 게 있나요?' },
+  { id: '0040', category: 'daily', text: '오늘 드신 약이 있다면 몇 가지였나요?' },
+  { id: '0041', category: 'daily', text: '어제 무엇을 하며 시간을 보내셨나요?' },
+  { id: '0042', category: 'daily', text: '오늘 입고 계신 옷은 어떤 색인가요?' },
+  { id: '0043', category: 'daily', text: '오늘 물을 몇 잔 정도 마셨는지 기억나세요?' },
+  { id: '0044', category: 'daily', text: '오늘 가장 기분 좋았던 순간은 언제였나요?' },
+
+  // 문제해결 (problem) - 3개
+  { id: '0045', category: 'problem', text: '우산이 없는데 비가 온다면 어떻게 하시겠어요?' },
+  { id: '0046', category: 'problem', text: '전화가 안 걸릴 때 어떻게 하면 좋을까요?' },
+  { id: '0047', category: 'problem', text: '냉장고에 있는 재료로 오늘 저녁 메뉴를 정한다면 무엇을 만드시겠어요?' },
+
+  // 상식/화제 (general) - 3개
+  { id: '0048', category: 'general', text: '요즘 가장 관심 있는 뉴스나 이야깃거리가 있나요?' },
+  { id: '0049', category: 'general', text: '좋아하는 계절은 언제이고, 이유는 무엇인가요?' },
+  { id: '0050', category: 'general', text: '요즘 배우고 싶거나 해보고 싶은 것이 있나요?' },
+
+    // 회상 (reminiscence) - 추가 15개
+  { id: '0051', category: 'reminiscence', text: '어릴 때 가장 좋아했던 놀이는 무엇이었나요?' },
+  { id: '0052', category: 'reminiscence', text: '어린 시절 명절에는 가족과 무엇을 하며 보내셨나요?' },
+  { id: '0053', category: 'reminiscence', text: '학창 시절 가장 좋아했던 과목은 무엇이었나요?' },
+  { id: '0054', category: 'reminiscence', text: '학교에 다닐 때 기억에 남는 선생님이 있으신가요?' },
+  { id: '0055', category: 'reminiscence', text: '어릴 때 자주 가던 시장이나 가게가 있었나요?' },
+  { id: '0056', category: 'reminiscence', text: '젊었을 때 가장 자주 입었던 옷은 어떤 스타일이었나요?' },
+  { id: '0057', category: 'reminiscence', text: '처음 월급을 받았을 때 무엇을 하셨는지 기억나시나요?' },
+  { id: '0058', category: 'reminiscence', text: '젊었을 때 가장 좋아했던 취미는 무엇이었나요?' },
+  { id: '0059', category: 'reminiscence', text: '예전에 가족과 함께 자주 먹었던 음식은 무엇인가요?' },
+  { id: '0060', category: 'reminiscence', text: '살면서 가장 기억에 남는 생일은 언제인가요?' },
+  { id: '0061', category: 'reminiscence', text: '예전에 살던 집의 모습 중 기억나는 것이 있나요?' },
+  { id: '0062', category: 'reminiscence', text: '어릴 때 좋아했던 만화나 TV 프로그램이 있었나요?' },
+  { id: '0063', category: 'reminiscence', text: '예전에 가족과 함께 갔던 소풍 중 기억나는 곳이 있나요?' },
+  { id: '0064', category: 'reminiscence', text: '젊은 시절 자주 듣던 가수나 음악이 있었나요?' },
+  { id: '0065', category: 'reminiscence', text: '예전에 특별히 아끼던 물건이 있었나요?' },
+
+  // 지남력 (orientation) - 추가 12개
+  { id: '0066', category: 'orientation', text: '오늘은 몇 월인지 말씀해 주시겠어요?' },
+  { id: '0067', category: 'orientation', text: '오늘이 평일인가요, 주말인가요?' },
+  { id: '0068', category: 'orientation', text: '지금은 오전인가요, 오후인가요?' },
+  { id: '0069', category: 'orientation', text: '지금 계신 장소에서 가장 가까운 방은 어디인가요?' },
+  { id: '0070', category: 'orientation', text: '지금 계신 곳의 주변에는 어떤 장소가 있나요?' },
+  { id: '0071', category: 'orientation', text: '오늘 해가 뜨는 시간과 지는 시간 중 어느 쪽이 더 가까운가요?' },
+  { id: '0072', category: 'orientation', text: '지금 밖의 밝기는 낮에 가까운가요, 밤에 가까운가요?' },
+  { id: '0073', category: 'orientation', text: '현재 있는 곳에서 주로 사용하는 교통수단은 무엇인가요?' },
+  { id: '0074', category: 'orientation', text: '이번 달에 특별히 기다리고 있는 일이 있나요?' },
+  { id: '0075', category: 'orientation', text: '다음 계절은 무엇인가요?' },
+  { id: '0076', category: 'orientation', text: '오늘 아침과 지금의 시간 중 어느 쪽이 더 먼저인가요?' },
+  { id: '0077', category: 'orientation', text: '오늘 하루 중 지금은 어느 정도 시간이 지난 것 같나요?' },
+
+  // 계산/논리 (calculation) - 추가 12개
+  { id: '0078', category: 'calculation', text: '20에서 3을 빼면 얼마인가요?' },
+  { id: '0079', category: 'calculation', text: '15 더하기 7은 얼마인가요?' },
+  { id: '0080', category: 'calculation', text: '30에서 10을 빼면 얼마인가요?' },
+  { id: '0081', category: 'calculation', text: '500원짜리 동전 두 개는 모두 얼마인가요?' },
+  { id: '0082', category: 'calculation', text: '100원짜리 동전 다섯 개는 얼마인가요?' },
+  { id: '0083', category: 'calculation', text: '10에서 2씩 더하면 20이 될 때 몇 번 더해야 하나요?' },
+  { id: '0084', category: 'calculation', text: '5 더하기 5 더하기 10은 얼마인가요?' },
+  { id: '0085', category: 'calculation', text: '50에서 5를 두 번 빼면 얼마인가요?' },
+  { id: '0086', category: 'calculation', text: '3개씩 묶어서 12개가 되려면 몇 묶음이 필요한가요?' },
+  { id: '0087', category: 'calculation', text: '오후 2시에서 한 시간 뒤는 몇 시인가요?' },
+  { id: '0088', category: 'calculation', text: '오전 9시에서 두 시간 뒤는 몇 시인가요?' },
+  { id: '0089', category: 'calculation', text: '10, 20, 30 다음에 올 숫자는 무엇인가요?' },
+
+  // 언어유창성 (language) - 추가 15개
+  { id: '0090', category: 'language', text: 'ㄱ으로 시작하는 음식 이름을 세 가지 말해보세요.' },
+  { id: '0091', category: 'language', text: 'ㄴ으로 시작하는 단어를 세 가지 말해보세요.' },
+  { id: '0092', category: 'language', text: '과일 이름을 다섯 가지 말해보세요.' },
+  { id: '0093', category: 'language', text: '채소 이름을 다섯 가지 말해보세요.' },
+  { id: '0094', category: 'language', text: '우리 주변에서 볼 수 있는 새 이름을 세 가지 말해보세요.' },
+  { id: '0095', category: 'language', text: '탈것 이름을 다섯 가지 말해보세요.' },
+  { id: '0096', category: 'language', text: '주방에서 사용하는 물건을 다섯 가지 말해보세요.' },
+  { id: '0097', category: 'language', text: '겨울에 사용하는 물건을 세 가지 말해보세요.' },
+  { id: '0098', category: 'language', text: '둥근 모양의 물건을 세 가지 말해보세요.' },
+  { id: '0099', category: 'language', text: '학교에서 볼 수 있는 물건을 다섯 가지 말해보세요.' },
+  { id: '0100', category: 'language', text: '사람의 몸에서 움직일 수 있는 부분을 다섯 가지 말해보세요.' },
+  { id: '0101', category: 'language', text: '주변에서 흔히 볼 수 있는 꽃 이름을 세 가지 말해보세요.' },
+  { id: '0102', category: 'language', text: '마트에서 살 수 있는 물건을 다섯 가지 말해보세요.' },
+  { id: '0103', category: 'language', text: '여름과 관련된 단어를 다섯 가지 말해보세요.' },
+  { id: '0104', category: 'language', text: '비가 오는 날과 관련된 단어를 다섯 가지 말해보세요.' },
+
+  // 가족/관계 (family) - 추가 12개
+  { id: '0105', category: 'family', text: '가족 중 가장 먼저 연락하고 싶은 사람은 누구인가요?' },
+  { id: '0106', category: 'family', text: '가족과 함께 가장 자주 먹는 음식은 무엇인가요?' },
+  { id: '0107', category: 'family', text: '가족과 함께 즐겨 보는 TV 프로그램이 있나요?' },
+  { id: '0108', category: 'family', text: '가족 중 아침에 가장 일찍 일어나는 사람은 누구인가요?' },
+  { id: '0109', category: 'family', text: '가족과 함께 산책한다면 어디로 가고 싶으신가요?' },
+  { id: '0110', category: 'family', text: '가족 중 가장 웃음이 많은 사람은 누구인가요?' },
+  { id: '0111', category: 'family', text: '가족과 함께했던 즐거운 식사 자리가 기억나시나요?' },
+  { id: '0112', category: 'family', text: '가족에게 고마웠던 일이 있다면 무엇인가요?' },
+  { id: '0113', category: 'family', text: '가족 중 요즘 가장 자주 보는 사람은 누구인가요?' },
+  { id: '0114', category: 'family', text: '가족과 함께 여행한다면 어디로 가고 싶으신가요?' },
+  { id: '0115', category: 'family', text: '가족 중 가장 재미있는 이야기를 잘하는 사람은 누구인가요?' },
+  { id: '0116', category: 'family', text: '가족과 함께 찍은 사진 중 기억에 남는 사진이 있나요?' },
+
+  // 일상/감각 (daily) - 추가 16개
+  { id: '0117', category: 'daily', text: '오늘 가장 먼저 한 일은 무엇인가요?' },
+  { id: '0118', category: 'daily', text: '오늘 아침에 일어나서 어디에 가장 먼저 가셨나요?' },
+  { id: '0119', category: 'daily', text: '오늘 어떤 신발을 신고 계신가요?' },
+  { id: '0120', category: 'daily', text: '오늘 가장 오래 머문 장소는 어디인가요?' },
+  { id: '0121', category: 'daily', text: '오늘 누구에게 전화나 문자를 보내셨나요?' },
+  { id: '0122', category: 'daily', text: '오늘 먹은 음식 중 가장 맛있었던 것은 무엇인가요?' },
+  { id: '0123', category: 'daily', text: '오늘 들었던 소리 중 기억나는 것이 있나요?' },
+  { id: '0124', category: 'daily', text: '오늘 본 사람 중 기억나는 사람이 있나요?' },
+  { id: '0125', category: 'daily', text: '오늘 사용한 물건 중 가장 자주 사용한 것은 무엇인가요?' },
+  { id: '0126', category: 'daily', text: '오늘 집안일을 하셨다면 어떤 일을 하셨나요?' },
+  { id: '0127', category: 'daily', text: '오늘 가장 많이 웃었던 순간은 언제였나요?' },
+  { id: '0128', category: 'daily', text: '오늘 새롭게 알게 된 것이 있나요?' },
+  { id: '0129', category: 'daily', text: '오늘 밖의 공기는 따뜻했나요, 시원했나요?' },
+  { id: '0130', category: 'daily', text: '오늘 주변에서 본 색깔 중 가장 눈에 띈 색은 무엇인가요?' },
+  { id: '0131', category: 'daily', text: '오늘 사용한 교통수단이 있다면 무엇이었나요?' },
+  { id: '0132', category: 'daily', text: '오늘 하루 중 가장 편안했던 시간은 언제였나요?' },
+
+  // 문제해결 (problem) - 추가 8개
+  { id: '0133', category: 'problem', text: '집 열쇠를 찾을 수 없다면 어디부터 찾아보시겠어요?' },
+  { id: '0134', category: 'problem', text: '물을 컵에 쏟았다면 어떻게 처리하시겠어요?' },
+  { id: '0135', category: 'problem', text: '약속 시간보다 일찍 도착했다면 무엇을 하며 기다리시겠어요?' },
+  { id: '0136', category: 'problem', text: '냉장고에 음식이 부족하다면 어떻게 하시겠어요?' },
+  { id: '0137', category: 'problem', text: '길을 가다가 방향을 잃었다면 누구에게 도움을 요청하시겠어요?' },
+  { id: '0138', category: 'problem', text: '휴대전화 배터리가 거의 없다면 어떻게 하시겠어요?' },
+  { id: '0139', category: 'problem', text: '친구가 집에 놀러 온다면 어떤 음식을 준비하시겠어요?' },
+  { id: '0140', category: 'problem', text: '외출하려는데 날씨가 갑자기 추워졌다면 어떻게 준비하시겠어요?' },
+
+  // 상식/화제 (general) - 추가 10개
+  { id: '0141', category: 'general', text: '봄 하면 가장 먼저 떠오르는 것은 무엇인가요?' },
+  { id: '0142', category: 'general', text: '가을 하면 생각나는 음식은 무엇인가요?' },
+  { id: '0143', category: 'general', text: '가장 좋아하는 과일은 무엇인가요?' },
+  { id: '0144', category: 'general', text: '좋아하는 꽃이 있다면 무엇인가요?' },
+  { id: '0145', category: 'general', text: '산과 바다 중 어디에 가는 것을 더 좋아하시나요? 이유는 무엇인가요?' },
+  { id: '0146', category: 'general', text: '아침과 저녁 중 어느 시간이 더 좋으신가요?' },
+  { id: '0147', category: 'general', text: '집에서 가장 좋아하는 공간은 어디인가요?' },
+  { id: '0148', category: 'general', text: '하루 중 가장 좋아하는 시간대는 언제인가요?' },
+  { id: '0149', category: 'general', text: '다른 사람에게 추천하고 싶은 음식이 있나요?' },
+  { id: '0150', category: 'general', text: '요즘 하루 중 가장 기다려지는 시간은 언제인가요?' },
+
+];
+
+export const CATEGORY_LABELS: Record<Question['category'], string> = {
+  reminiscence: '추억',
+  orientation: '오늘',
+  calculation: '숫자',
+  language: '낱말',
+  family: '가족',
+  daily: '일상',
+  problem: '생각',
+  general: '이야기',
+};
