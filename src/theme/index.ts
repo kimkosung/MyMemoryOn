@@ -8,6 +8,7 @@ export const colors = {
   border: '#E4DFD3',
   danger: '#C0392B',
   moodBg: '#FFF6E5',
+  blue: '#3498DB',
 };
 
 export const spacing = {

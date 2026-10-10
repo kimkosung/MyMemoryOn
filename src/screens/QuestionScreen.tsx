@@ -16,6 +16,7 @@ import { colors, fontSize, spacing } from '../theme';
 import { getTodayQuestions } from '../utils/dailyQuestions';
 import { CATEGORY_LABELS } from '../data/questions';
 import { Answer, Question } from '../types';
+import ProgressBar from '../components/ProgressBar';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Question'>;
 
@@ -64,10 +65,8 @@ export default function QuestionScreen({ navigation }: Props) {
         style={styles.flex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
+        <ProgressBar totalNumber={questions.length} nowNumber={index + 1} />
         <View style={styles.container}>
-          <Text style={styles.progress}>
-            {index + 1} / {questions.length}
-          </Text>
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{CATEGORY_LABELS[current.category]}</Text>
           </View>
@@ -77,18 +76,19 @@ export default function QuestionScreen({ navigation }: Props) {
             style={styles.input}
             value={inputText}
             onChangeText={setInputText}
-            placeholder="여기에 답을 적어주세요 (말로 들으셨으면 대신 적어주셔도 돼요)"
+            placeholder="여기에 답을 적어주세요."
             placeholderTextColor={colors.textSecondary}
             multiline
             autoFocus
           />
-
+        </View>
+        <View style={styles.buttonContainer}>
           <BigButton
             label={isLast ? '다음 (기분 기록하기)' : '다음 질문'}
             onPress={handleNext}
             style={styles.nextButton}
           />
-        </View>
+          </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -103,39 +103,41 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     justifyContent: 'center',
   },
-  progress: {
-    fontSize: fontSize.body - 4,
-    color: colors.textSecondary,
-    marginBottom: spacing.xs,
+  buttonContainer: {
+    padding: spacing.lg,
   },
   badge: {
     alignSelf: 'flex-start',
     backgroundColor: colors.moodBg,
-    borderRadius: 999,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: colors.border,
     paddingHorizontal: spacing.sm,
-    paddingVertical: 4,
-    marginBottom: spacing.sm,
+    paddingVertical: 6,
+    marginVertical: spacing.sm,
+    
   },
   badgeText: {
     color: colors.primaryDark,
     fontWeight: '700',
-    fontSize: fontSize.body - 6,
+    fontSize: fontSize.body - 4,
   },
   question: {
-    fontSize: fontSize.title,
+    fontSize: fontSize.body,
     fontWeight: '700',
     color: colors.text,
-    lineHeight: 40,
-    marginBottom: spacing.lg,
+    lineHeight: 32,
+    marginBottom: spacing.sm,
   },
   input: {
-    minHeight: 140,
+    minHeight: 200,
     borderWidth: 2,
+    lineHeight: 28,
     borderColor: colors.border,
     borderRadius: 16,
     backgroundColor: colors.card,
     padding: spacing.md,
-    fontSize: fontSize.body,
+    fontSize: fontSize.button,
     color: colors.text,
     textAlignVertical: 'top',
     marginBottom: spacing.lg,
