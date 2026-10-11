@@ -48,7 +48,11 @@ export default function HomeScreen({ navigation }: Props) {
             <Text style={styles.doneSub}>내일 또 만나요.</Text>
           </View>
         ) : (
-          <Text style={styles.guide}>아래 버튼을 눌러서{'\n'}오늘의 질문을 시작해 보세요.</Text>
+          <>
+            <Text style={styles.guide}>아래 버튼을 눌러서{'\n'}오늘의 질문을 시작해 보세요.</Text>
+            <Text style={styles.guide}>최대한 오래 생각하고 답변해주세요.</Text>
+          </>
+
         )}
 
         <View style={styles.buttons}>
